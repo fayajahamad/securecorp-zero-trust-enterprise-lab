@@ -1,0 +1,21 @@
+pomerium/client-secret.txt
+pomerium/config.yaml
+.env
+monitoring/logs/
+# Secrets and credentials
+pomerium/client-secret.txt
+monitoring/.env.smtp
+.env
+.env.*
+*.key
+*.p12
+*.pfx
+
+# Runtime logs and local data
+monitoring/logs/
+*.log
+*.db
+*.sqlite
+*.sqlite3
+docs/compose.before-segmentation.yaml
+monitoring/compose.backup.yaml

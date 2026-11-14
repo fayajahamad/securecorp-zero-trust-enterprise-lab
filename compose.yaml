@@ -1,0 +1,47 @@
+
+services:
+  hr-portal:
+    image: nginx:stable-alpine
+    container_name: zt-hr-portal
+
+    volumes:
+      - ./applications/hr:/usr/share/nginx/html:ro
+
+    expose:
+      - "80"
+
+    networks:
+      - hr-private
+
+  pomerium:
+    image: pomerium/pomerium:latest
+    container_name: zt-pomerium
+
+    ports:
+      - "127.0.0.1:443:443"
+
+    volumes:
+      - ./pomerium/config.yaml:/pomerium/config.yaml:ro
+
+    secrets:
+      - pomerium_oidc_secret
+
+    depends_on:
+      - hr-portal
+
+    networks:
+      - identity
+      - hr-private
+
+secrets:
+  pomerium_oidc_secret:
+    file: ./pomerium/client-secret.txt
+
+networks:
+  identity:
+    name: zt-identity
+    external: true
+
+  hr-private:
+    name: zt-hr-private
+    internal: true

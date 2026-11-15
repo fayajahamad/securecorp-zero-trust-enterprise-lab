@@ -41,3 +41,21 @@ This is a local demonstration, not a production deployment.
 
 ## Project Status
 Functional local lab; production hardening outstanding.
+
+## Architecture
+See [Security Architecture](docs/ARCHITECTURE.md) for the system diagram and network design.
+
+## Project Demonstration
+
+### 1. Authorized HR Portal Access
+![HR Portal](docs/evidence/01-hr-portal.png)
+
+### 2. Zero Trust Access Denied
+![Access Denied](docs/evidence/02-access-denied.png)
+
+### 3. Security Monitoring Dashboard
+![Grafana Dashboard](docs/evidence/03-security-dashboard.png)
+
+### 4. Security Alert Notification
+![Security Alert](docs/evidence/04-security-alert.png)
+
